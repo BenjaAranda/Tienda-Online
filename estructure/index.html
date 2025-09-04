@@ -1,99 +1,132 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PerfeGramure</title>
-    <link rel="stylesheet" href="../styles/main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Level-Up Gamer</title>
+  <link rel="stylesheet" href="../styles/main.css">
 </head>
 <body>
-    <!-- Encabezado -->
-    <header class="encabezado">
-        <div class="barra-superior">
-            <!-- Logo -->
-            <div class="logo">
-                <img src="img/coloniCiniFiscalini.png" alt="Logo">
-            </div>
 
-            <!-- Buscador -->
-            <div class="buscador">
-                <select>
-                    <option value="todos">Todos</option>
-                    <option value="perfumes">Perfumes</option>
-                    <option value="arabes">Perfumes Árabes</option>
-                </select>
-                <input type="text" placeholder="Encuentra los mejores perfumes en una busqueda">
-            </div>
+  <!-- Encabezado -->
+  <header class="encabezado">
+    <div class="barra-superior">
+      <!-- Logo -->
+      <div class="logo">
+        <img src="img/logo-levelup.png" alt="Logo Level-Up Gamer">
+      </div>
 
-            <!-- Iconos -->
-            <div class="iconos">
-                <button class="btn-usuario">👤</button>
-                <button class="btn-carrito">🛒</button>
-            </div>
-        </div>
+      <!-- Buscador -->
+      <div class="buscador">
+        <select>
+          <option value="todos">Todos</option>
+          <option value="consolas">Consolas</option>
+          <option value="pc">Computadores Gamers</option>
+          <option value="accesorios">Accesorios</option>
+        </select>
+        <input type="text" placeholder="Busca tus productos gamer favoritos...">
+      </div>
 
-        <!-- Navegación -->
-        <nav class="navegacion">
-            <ul>
-                <li><a href="#">Perfumes </a></li>
-                <li><a href="#">Perfumes Árabes </a></li>
-                <li><a href="#" class="liquidacion">Liquidación</a></li>
-                <li><a href="#">Marcas</a></li>
-                <li><a href="#">Silk Boutique </a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
+      <!-- Iconos -->
+      <div class="iconos">
+        <!-- Redirección directa -->
+        <button class="btn-usuario" onclick="window.location.href='login.html'">👤</button>
+        <button class="btn-carrito">🛒</button>
+      </div>
+    </div>
 
-            <!-- Botón Tiendas -->
-            <button class="btn-tiendas">📍 Tiendas</button>
-        </nav>
-    </header>
+    <!-- Navegación -->
+    <nav class="navegacion">
+      <ul>
+        <li><a href="#">Consolas</a></li>
+        <li><a href="#">PC Gamers</a></li>
+        <li><a href="#">Accesorios</a></li>
+        <li><a href="#">Sillas Gamers</a></li>
+        <li><a href="#">Merch Gamer</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+      <!-- Botón Tiendas -->
+      <button class="btn-tiendas">📍 Eventos</button>
+    </nav>
+  </header>
 
-    <main>
-        <section class="banner">
-        <img src="img/perfumelinoAtsesino.webp" alt="Promoción de perfumes">
-        <div class="banner-text">
-            <h2>3 CUOTAS</h2>
-            <p>Sin interés con Mercado Pago</p>
-            <a href="#" class="btn">¡Ver productos!</a>
-        </div>
+  <!-- Contenido principal -->
+  <main>
+    <!-- Banner -->
+    <section class="banner">
+      <img src="img/banner-gamer.jpg" alt="Promoción Gamer">
+      <div class="banner-text">
+        <h2>Equipamiento Gamer</h2>
+        <p>Consolas, PCs, Sillas y más 🚀</p>
+        <a href="#" class="btn">¡Explorar ahora!</a>
+      </div>
     </section>
 
     <!-- Sección de categorías -->
     <section class="categorias">
-        <div class="categoria">
-            <img src="img/coloniCiniFiscalini.png" alt="Perfumes de Mujer">
-            <h3>Perfumes de Mujer</h3>
-            <a href="#">Ver categoría →</a>
-        </div>
-        <div class="categoria">
-            <img src="img/coloniCiniFiscalini.png" alt="Perfumes de Hombre">
-            <h3>Perfumes de Hombre</h3>
-            <a href="#">Ver categoría →</a>
-        </div>
-        <div class="categoria">
-            <img src="img/coloniCiniFiscalini.png" alt="Estuches">
-            <h3>Estuches</h3>
-            <a href="#">Ver categoría →</a>
-        </div>
-        <div class="categoria">
-            <img src="img/coloniCiniFiscalini.png" alt="Perfumes Tester">
-            <h3>Perfumes Tester</h3>
-            <a href="#">Ver categoría →</a>
-        </div>
-        <div class="categoria">
-            <img src="img/coloniCiniFiscalini.png" alt="Perfumes Árabes">
-            <h3>Perfumes Árabes</h3>
-            <a href="#">Ver categoría →</a>
-        </div>
-        <div class="categoria">
-            <img src="img/coloniCiniFiscalini.png" alt="Perfumes Más Vendidos">
-            <h3>Perfumes Más Vendidos</h3>
-            <a href="#">Ver categoría →</a>
-        </div>
+      <div class="categoria">
+        <img src="img_index/CONSOLAS.png" alt="Consolas">
+        <h3>Consolas</h3>
+        <a href="#">Ver categoría →</a>
+      </div>
+      <div class="categoria">
+        <img src="img_index/PC1.png" alt="PC Gamers">
+        <h3>PC Gamers</h3>
+        <a href="#">Ver categoría →</a>
+      </div>
+      <div class="categoria">
+        <img src="img_index/Silla_gamer.png" alt="Sillas">
+        <h3>Sillas Gamers</h3>
+        <a href="#">Ver categoría →</a>
+      </div>
+      <div class="categoria">
+        <img src="img_index/mouseviper.png" alt="Mouse">
+        <h3>Mouse</h3>
+        <a href="#">Ver categoría →</a>
+      </div>
+      <div class="categoria">
+        <img src="img_index/accesorios.png" alt="Accesorios">
+        <h3>Accesorios</h3>
+        <a href="#">Ver categoría →</a>
+      </div>
+      <div class="categoria">
+        <img src="img_index/gengar.png" alt="Merch">
+        <h3>Merch Gamer</h3>
+        <a href="#">Ver categoría →</a>
+      </div>
     </section>
-    </main>
-    <script src="../scripts/home.js" defer></script>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-contenido">
+      <div class="footer-logo">
+        <img src="img/logo-levelup.png" alt="Level-Up Gamer">
+        <p>Tu tienda gamer en Chile desde 2022 🎮</p>
+      </div>
+      <div class="footer-links">
+        <h4>Enlaces</h4>
+        <ul>
+          <li><a href="#">Consolas</a></li>
+          <li><a href="#">PC Gamers</a></li>
+          <li><a href="#">Accesorios</a></li>
+          <li><a href="#">Sillas Gamers</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Síguenos</h4>
+        <a href="#">Facebook</a> | 
+        <a href="#">Instagram</a> | 
+        <a href="#">Twitter</a>
+      </div>
+      <div class="footer-newsletter">
+        <h4>Suscríbete</h4>
+        <input type="email" placeholder="Tu correo">
+        <button>Enviar</button>
+      </div>
+    </div>
+    <p class="footer-copy">© 2025 Level-Up Gamer. Todos los derechos reservados.</p>
+  </footer>
 
 </body>
 </html>
-
