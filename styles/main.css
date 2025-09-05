@@ -1,3 +1,4 @@
+ccs main:
 /* 🎮 Reset */
 * {
     margin: 0;
@@ -91,14 +92,14 @@ body {
 }
 
 .navegacion ul li a {
-    color: #fff;
+    color: #0fc71e;
     text-decoration: none;
     font-weight: bold;
     transition: 0.3s;
 }
 
 .navegacion ul li a:hover {
-    color: #0ec185; /* morado gamer */
+    color: #b700ff; /* morado gamer */
 }
 
 /* Botón Tiendas/Eventos */
@@ -296,6 +297,80 @@ body {
     text-align: center;
     font-size: 0.9rem;
     color: #666;
+}
+
+/* Productos Destacados */
+.productos {
+    padding: 40px 20px;
+    background-color: #0d0d0d;
+    text-align: center;
+}
+
+.titulo-seccion {
+    color: #8000ff;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #39ff14;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.producto {
+    background: #1a1a1a;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0px 0px 15px #8000ff44;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.producto:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 25px #39ff1455;
+}
+
+.producto img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.producto h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.precio {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #39ff14;
+    margin-bottom: 15px;
+}
+
+.btn-carrito {
+    background-color: #8000ff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-carrito:hover {
+    background-color: #39ff14;
+    color: #111;
 }
 
 /* 📱 Responsivo */

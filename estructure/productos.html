@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Level-Up Gamer | Productos</title>
+  <!-- Estilos generales -->
+  <link rel="stylesheet" href="../styles/main.css">
+  <!-- Estilos específicos de productos -->
+  <link rel="stylesheet" href="../styles/productos.css">
+
+</head>
+<body>
+  <!-- Encabezado -->
+  <header class="encabezado">
+    <div class="barra-superior">
+      <div class="logo">
+        <a href="index.html"><img src="img_index/logo_main.png" alt="Logo"></a>
+      </div>
+      <nav class="navegacion">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="productos.html" class="activo">Productos</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="productos-page">
+    <!-- Filtros -->
+    <aside class="filtros">
+      <h3>Filtros</h3>
+
+      <!-- Ordenar -->
+      <label for="ordenar">Ordenar</label>
+      <select id="ordenar">
+        <option value="default">Por defecto</option>
+        <option value="precioMayor">Mayor precio</option>
+        <option value="precioMenor">Menor precio</option>
+        <option value="a-z">A - Z</option>
+        <option value="z-a">Z - A</option>
+      </select>
+
+      <!-- Categoría -->
+      <label for="categoria">Categoría</label>
+      <select id="categoria">
+        <option value="todas">Todas</option>
+        <option value="Juegos de Mesa">Juegos de Mesa</option>
+        <option value="Accesorios">Accesorios</option>
+        <option value="Consolas">Consolas</option>
+        <option value="Computadores Gamers">Computadores Gamers</option>
+        <option value="Sillas Gamers">Sillas Gamers</option>
+        <option value="Mouse">Mouse</option>
+        <option value="Mousepad">Mousepad</option>
+        <option value="Poleras Personalizadas">Poleras Personalizadas</option>
+        <option value="Polerones Gamers Personalizados">Polerones Gamers Personalizados</option>
+      </select>
+
+      <!-- Rango de precio -->
+      <label for="precioMin">Precio mínimo</label>
+      <input type="number" id="precioMin" value="0">
+      <label for="precioMax">Precio máximo</label>
+      <input type="number" id="precioMax" value="2000000">
+
+      <!-- Botón filtrar -->
+      <button id="btnFiltrar" class="btn-carrito">Filtrar</button>
+    </aside>
+
+    <!-- Lista de productos -->
+    <section class="lista-productos" id="listaProductos">
+      <!-- Los productos se renderizan con JS -->
+    </section>
+  </main>
+
+  <script src="../scripts/productos.js"></script>
+</body>
+</html>
