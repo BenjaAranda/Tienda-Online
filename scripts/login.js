@@ -56,3 +56,20 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
 document.getElementById("adminLoginBtn").addEventListener("click", () => {
   alert("Aquí irá el login de administrador (pendiente de implementar).");
 });
+document.getElementById("contactoForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  // Mostrar mensaje de éxito
+  const mensaje = document.getElementById("mensaje-exito");
+  mensaje.textContent = "✅ ¡Mensaje enviado! Gracias por contactarnos.";
+  mensaje.style.display = "block";
+
+  // Limpiar formulario
+  this.reset();
+
+  // Ocultar mensaje automáticamente después de 4 segundos
+  setTimeout(() => {
+    mensaje.style.display = "none";
+  }, 4000);
+});
+

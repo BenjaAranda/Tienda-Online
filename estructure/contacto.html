@@ -3,14 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Level-Up Gamer | Productos</title>
-  <!-- Estilos generales -->
-  <link rel="stylesheet" href="../styles/main.css">
-  <!-- Estilos específicos de productos -->
-  <link rel="stylesheet" href="../styles/productos.css">
-
+  <title>Level-Up Gamer | Contacto</title>
+  <link rel="stylesheet" href="../styles/contacto.css">
 </head>
 <body>
+
   <!-- Encabezado -->
   <header class="encabezado">
     <div class="barra-superior">
@@ -52,53 +49,45 @@
     </nav>
   </header>
 
-  <main class="productos-page">
-    <!-- Filtros -->
-    <aside class="filtros">
-      <h3>Filtros</h3>
+  <!-- Banner Contacto -->
+  <section class="banner-contacto">
+    <h1>Contáctanos</h1>
+    <p>¿Tienes dudas o problemas? Escríbenos, estamos para ayudarte 🎮</p>
+  </section>
 
-      <!-- Ordenar -->
-      <label for="ordenar">Ordenar</label>
-      <select id="ordenar">
-        <option value="default">Por defecto</option>
-        <option value="precioMayor">Mayor precio</option>
-        <option value="precioMenor">Menor precio</option>
-        <option value="a-z">A - Z</option>
-        <option value="z-a">Z - A</option>
-      </select>
+  <!-- Formulario de Contacto -->
+  <section class="formulario-contacto">
+    <h2>Envíanos un mensaje</h2>
 
-      <!-- Categoría -->
-      <label for="categoria">Categoría</label>
-      <select id="categoria">
-        <option value="todas">Todas</option>
-        <option value="Juegos de Mesa">Juegos de Mesa</option>
-        <option value="Accesorios">Accesorios</option>
-        <option value="Consolas">Consolas</option>
-        <option value="Computadores Gamers">Computadores Gamers</option>
-        <option value="Sillas Gamers">Sillas Gamers</option>
-        <option value="Mouse">Mouse</option>
-        <option value="Mousepad">Mousepad</option>
-        <option value="Poleras Personalizadas">Poleras Personalizadas</option>
-        <option value="Polerones Gamers Personalizados">Polerones Gamers Personalizados</option>
-      </select>
+     <div id="mensaje-exito" class="mensaje-exito" style="display: none;"></div>
+    
+    <form id="contactoForm">
+      <div class="form-group">
+        <label for="nombre">Nombre *</label>
+        <input type="text" id="nombre" maxlength="100" required>
+      </div>
 
-      <!-- Rango de precio -->
-      <label for="precioMin">Precio mínimo</label>
-      <input type="number" id="precioMin" value="0">
-      <label for="precioMax">Precio máximo</label>
-      <input type="number" id="precioMax" value="2000000">
+      <div class="form-group">
+        <label for="correo">Correo *</label>
+        <input type="email" id="correo" maxlength="100" required>
+        <small>Solo se permiten: @duoc.cl | @profesor.duoc.cl | @gmail.com</small>
+      </div>
 
-      <!-- Botón filtrar -->
-      <button id="btnFiltrar" class="btn-carrito">Filtrar</button>
-    </aside>
+      <div class="form-group">
+        <label for="comentario">Comentario *</label>
+        <textarea id="comentario" rows="5" maxlength="500" required></textarea>
+      </div>
 
-    <!-- Lista de productos -->
-    <section class="lista-productos" id="listaProductos">
-      <!-- Los productos se renderizan con JS -->
-    </section>
-  </main>
+      <button type="submit" class="btn-enviar">Enviar</button>
+    </form>
+  </section>
 
-  <script src="../scripts/productos.js"></script>
+  <!-- Botón de WhatsApp -->
+  <section class="whatsapp-contacto">
+    <p>¿Prefieres hablar con soporte técnico directo?</p>
+    <a href="https://wa.me/56912345678" target="_blank" class="btn-whatsapp">💬 Chatear por WhatsApp</a>
+  </section>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-contenido">
@@ -110,11 +99,11 @@
       <div class="footer-links">
         <h4>Enlaces</h4>
         <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="productos.html">Productos</a></li>
-        <li><a href="nosotros.html">Nosotros</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-        <li><a href="blog.html">Blog</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="blog.html">Blog</a></li>
         </ul>
       </div>
       
@@ -133,5 +122,7 @@
 
     <p class="footer-copy">© 2025 Level-Up Gamer. Todos los derechos reservados.</p>
   </footer>
+
+  <script src="scripts/contacto.js"></script>
 </body>
 </html>
