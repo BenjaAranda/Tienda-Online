@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito - Level-Up Gamer</title>
+    <link rel="stylesheet" href="../styles/carrito.css">
+    
+
+</head>
+<body>
+    <!-- Encabezado -->
+    <header class="encabezado">
+        <div class="barra-superior">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="img_index/logo_main.png" alt="Logo Level-Up Gamer">
+            </div>
+
+            <!-- Buscador -->
+            <div class="buscador">
+                <select>
+                    <option value="todos">Todos</option>
+                    <option value="juegos">Juegos</option>
+                    <option value="hardware">Hardware</option>
+                </select>
+                <input type="text" placeholder="Buscar productos gamer...">
+            </div>
+
+            <!-- Iconos -->
+            <div class="iconos">
+                <button class="btn-usuario" onclick="window.location.href='login.html'">👤</button>
+                <button class="btn-carrito" onclick="window.location.href='carrito.html'">🛒</button>
+            </div>
+        </div>
+
+        <!-- Navegación -->
+        <nav class="navegacion">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#">Juegos</a></li>
+                <li><a href="#">Hardware</a></li>
+                <li><a href="#">Ofertas</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+            <button class="btn-tiendas">📍 Tiendas</button>
+        </nav>
+    </header>
+
+    <!-- Contenido del Carrito -->
+    <main class="contenedor-carrito">
+        <h1>Tu Canasta</h1>
+
+        <!-- Lista de productos generada con JS -->
+        <div id="listaCarrito"></div>
+
+        <!-- Acciones del carrito -->
+        <div class="acciones">
+            <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar Carrito</button>
+        </div>
+
+        
+        <!-- Resumen de compra -->
+        <div class="resumen">
+            <h2>Total: <span id="total">$0</span></h2>
+            <button class="btn-finalizar">Finalizar Compra</button>
+        </div>
+    </main>
+
+    <!-- Script del carrito -->
+    <script src="../scripts/productos.js"></script>
+    <script src="../scripts/carrito.js"></script>
+
+</body>
+</html>

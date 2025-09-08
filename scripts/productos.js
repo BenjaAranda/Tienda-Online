@@ -34,11 +34,64 @@ function renderProductos(lista) {
     listaProductos.appendChild(card);
   });
 }
-
-// Agregar al carrito (simulado)
 function agregarCarrito(codigo) {
-  alert(`Producto ${codigo} agregado al carrito 🛒`);
+  const producto = productos.find(p => p.codigo === codigo);
+  if (!producto) {
+    alert("Producto no encontrado");
+    return;
+  }
+
+  // Guardar en localStorage
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  carrito.push(producto);
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+
+  // Crear ventana emergente (neón)
+  const modal = document.createElement("div");
+  modal.style.position = "fixed";
+  modal.style.top = "0";
+  modal.style.left = "0";
+  modal.style.width = "100%";
+  modal.style.height = "100%";
+  modal.style.backgroundColor = "rgba(0,0,0,0.9)";
+  modal.style.display = "flex";
+  modal.style.alignItems = "center";
+  modal.style.justifyContent = "center";
+  modal.style.zIndex = "1000";
+
+  const contenido = document.createElement("div");
+  contenido.style.backgroundColor = "#111";
+  contenido.style.padding = "20px";
+  contenido.style.border = "2px solid #8e44ad";
+  contenido.style.borderRadius = "10px";
+  contenido.style.textAlign = "center";
+  contenido.style.color = "#ff00ff";
+
+  contenido.innerHTML = `
+    <h2>Producto agregado</h2>
+    <p>Se ha agregado <span style="color:#00ff00">${producto.nombre}</span> al carrito 🛒</p>
+  `;
+
+  const cerrar = document.createElement("button");
+  cerrar.textContent = "Cerrar";
+  cerrar.style.marginTop = "10px";
+  cerrar.style.padding = "5px 15px";
+  cerrar.style.cursor = "pointer";
+  cerrar.style.backgroundColor = "#8e44ad";
+  cerrar.style.color = "#fff";
+  cerrar.style.border = "none";
+  cerrar.style.borderRadius = "5px";
+  cerrar.style.fontWeight = "bold";
+
+  cerrar.addEventListener("click", () => {
+    document.body.removeChild(modal);
+  });
+
+  contenido.appendChild(cerrar);
+  modal.appendChild(contenido);
+  document.body.appendChild(modal);
 }
+
 
 // Filtrar productos
 function filtrarProductos() {
