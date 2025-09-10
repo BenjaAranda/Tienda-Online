@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin | Dashboard - Level-Up Gamer</title>
+  <link rel="stylesheet" href="../styles/admin.css">
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="sidebar">
+      <div class="brand">Level-Up <span>Admin</span></div>
+      <nav>
+        <a href="admin-dashboard.html" class="active">Dashboard</a>
+        <a href="admin-products.html">Productos</a>
+        <a href="admin-users.html">Usuarios</a>
+        <a id="logoutBtn" href="#">Cerrar sesión</a>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <header class="content-header">
+        <h2>Panel de administración</h2>
+        <div class="small">Resumen rápido</div>
+      </header>
+
+      <section class="overview-grid">
+        <div class="card">
+          <h3 id="totalProducts">0</h3>
+          <p>Productos</p>
+        </div>
+        <div class="card">
+          <h3 id="totalUsers">0</h3>
+          <p>Usuarios</p>
+        </div>
+        <div class="card">
+          <h3 id="lowStockCount">0</h3>
+          <p>Productos con stock crítico</p>
+        </div>
+      </section>
+
+      <section>
+        <h3>Últimos productos añadidos</h3>
+        <div id="recentList" class="recent-list"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="../scripts/auth.js"></script>
+  <script>
+    authProtect(); // proteger la página
+
+    // resumen rápido
+    function loadResumen(){
+      const productos = JSON.parse(localStorage.getItem('productos')||'[]');
+      const usuarios = JSON.parse(localStorage.getItem('usuarios')||'[]');
+      document.getElementById('totalProducts').textContent = productos.length;
+      document.getElementById('totalUsers').textContent = usuarios.length;
+      const low = productos.filter(p => p.stockCritico!=null && p.stockCritico!=='' && p.stockCritico >=0 && p.stock <= Number(p.stockCritico)).length;
+      document.getElementById('lowStockCount').textContent = low;
+
+      const recent = productos.slice(-6).reverse();
+      const recentList = document.getElementById('recentList');
+      recentList.innerHTML = recent.length? recent.map(r=>`<div class="recent-item"><strong>${r.nombre}</strong><span>${r.categoria}</span></div>`).join(''): '<p class="muted">No hay productos aún</p>';
+    }
+    document.getElementById('logoutBtn').addEventListener('click', (e)=>{ e.preventDefault(); logout(); });
+    loadResumen();
+  </script>
+</body>
+</html>

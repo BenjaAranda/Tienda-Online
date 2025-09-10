@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin | Level-Up Gamer - Login</title>
+  <link rel="stylesheet" href="../styles/admin.css">
+</head>
+<body class="admin-body">
+  <main class="admin-card">
+    <h1>Level-Up Gamer - Admin</h1>
+    <p class="muted">Ingrese credenciales de administrador</p>
+
+    <form id="loginForm" class="form">
+      <label>Usuario</label>
+      <input id="adminUser" placeholder="admin" required>
+
+      <label>Contraseña</label>
+      <input id="adminPass" type="password" placeholder="••••••" required>
+
+      <button type="submit" class="btn primary">Iniciar sesión</button>
+      <p class="note">Cuenta demo: <strong>admin / admin123</strong></p>
+      <div id="loginMsg" class="msg" aria-live="polite"></div>
+    </form>
+  </main>
+
+  <script src="../scripts/auth.js"></script>
+</body>
+</html>
