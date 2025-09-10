@@ -1,11 +1,8 @@
 // Definimos el objeto de compras
 const carrito = [
-    { nombre: "Catan", unidades: 1, precioUnitario: 20000 },
-    { nombre: "Mando Gamer", unidades: 2, precioUnitario: 10000 },
-    { nombre: "gato", unidades: 10, precioUnitario: 2000 },
-    { codigo: "JM001", categoria: "Juegos de Mesa", nombre: "Catan", precioUnitario: 29990, unidades: 1 },
-    { codigo: "JM002", categoria: "Juegos de Mesa", nombre: "Carcassonne", precioUnitario: 24990, unidades: 1 },
-    { codigo: "AC001", categoria: "Accesorios", nombre: "Controlador Xbox Series X", precioUnitario: 59990, unidades: 1 },
+  { codigo: "JM001", categoria: "Juegos de Mesa", nombre: "Catan", precioUnitario: 29990, unidades: 1 },
+  { codigo: "JM002", categoria: "Juegos de Mesa", nombre: "Carcassonne", precioUnitario: 24990, unidades: 1 },
+  { codigo: "AC001", categoria: "Accesorios", nombre: "Controlador Xbox Series X", precioUnitario: 59990, unidades: 1 },
 ];
 
 
@@ -27,14 +24,14 @@ function agregarCarrito(productoNuevo) {
 
 // Función para mostrar los productos
 function mostrarCarrito() {
-    listaCarrito.innerHTML = "";
-    let total = 0;
+  listaCarrito.innerHTML = "";
+  let total = 0;
 
-    carrito.forEach((producto, index) => {
-        const item = document.createElement("div");
-        item.classList.add("item-carrito");
+  carrito.forEach((producto, index) => {
+    const item = document.createElement("div");
+    item.classList.add("item-carrito");
 
-        item.innerHTML = `
+    item.innerHTML = `
             <h3>${producto.nombre}</h3>
             <p>
               <span class="texto-label">Unidades:</span> 
@@ -53,12 +50,12 @@ function mostrarCarrito() {
             </p>
         `;
 
-        listaCarrito.appendChild(item);
+    listaCarrito.appendChild(item);
 
-        total += producto.unidades * producto.precioUnitario;
-    });
+    total += producto.unidades * producto.precioUnitario;
+  });
 
-    totalElement.innerHTML = `
+  totalElement.innerHTML = `
         <span class="texto-label">Total:</span> 
         <span class="texto-valor">$${total.toLocaleString()}</span>
     `;
@@ -66,24 +63,24 @@ function mostrarCarrito() {
 
 // Cambiar unidades (➕ o ➖)
 function cambiarUnidades(index, cambio) {
-    if (carrito[index].unidades + cambio > 0) {
-        carrito[index].unidades += cambio;
-    } else {
-        carrito.splice(index, 1); // si llega a 0 se elimina
-    }
-    mostrarCarrito();
+  if (carrito[index].unidades + cambio > 0) {
+    carrito[index].unidades += cambio;
+  } else {
+    carrito.splice(index, 1); // si llega a 0 se elimina
+  }
+  mostrarCarrito();
 }
 
 // Eliminar producto con 🗑️
 function eliminarProducto(index) {
-    carrito.splice(index, 1);
-    mostrarCarrito();
+  carrito.splice(index, 1);
+  mostrarCarrito();
 }
 
 // Vaciar carrito
 function vaciarCarrito() {
-    carrito = [];
-    mostrarCarrito();
+  carrito = [];
+  mostrarCarrito();
 }
 
 
