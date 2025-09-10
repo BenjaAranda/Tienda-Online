@@ -1,15 +1,16 @@
 const productos = [
-  { codigo: "JM001", categoria: "Juegos de Mesa", nombre: "Catan", precio: 29990, imagen: "img_productos/catan.png" },
-  { codigo: "JM002", categoria: "Juegos de Mesa", nombre: "Carcassonne", precio: 24990, imagen: "img_productos/Carcassonne.png" },
-  { codigo: "AC001", categoria: "Accesorios", nombre: "Controlador Xbox Series X", precio: 59990, imagen: "img_productos/Controlador Xbox Series X.png" },
-  { codigo: "AC002", categoria: "Accesorios", nombre: "Auriculares HyperX Cloud II", precio: 79990, imagen: "img_productos/Auriculares HyperX Cloud II2.png" },
-  { codigo: "CO001", categoria: "Consolas", nombre: "PlayStation 5", precio: 549990, imagen: "img_productos/PlayStation 5.webp" },
-  { codigo: "CG001", categoria: "Computadores Gamers", nombre: "PC Gamer ASUS ROG Strix", precio: 1299990, imagen: "img_productos/PC Gamer ASUS ROG Strix.png" },
-  { codigo: "SG001", categoria: "Sillas Gamers", nombre: "Silla Gamer Secretlab Titan", precio: 349990, imagen: "img_productos/Silla Gamer Secretlab Titan.webp" },
-  { codigo: "MS001", categoria: "Mouse", nombre: "Mouse Logitech G502 HERO", precio: 49990, imagen: "img_productos/Mouse Logitech G502 HERO.png" },
-  { codigo: "MP001", categoria: "Mousepad", nombre: "Mousepad Razer Goliathus", precio: 29990, imagen: "img_productos/Mousepad Razer Goliathus.png" },
-  { codigo: "PP001", categoria: "Poleras Personalizadas", nombre: "Polera Gamer 'Level-Up'", precio: 14990, imagen: "img_productos/Polera Gamer 'Level-Up'.png" },
+  { codigo: "JM001", categoria: "Juegos de Mesa", nombre: "Catan", precio: 29990, descripcion: "Juego de estrategia con comercio y construcción.", stock: 10, imagen: "img_productos/catan.png" },
+  { codigo: "JM002", categoria: "Juegos de Mesa", nombre: "Carcassonne", precio: 24990, descripcion: "Construye ciudades, caminos y campos.", stock: 8, imagen: "img_productos/Carcassonne.png" },
+  { codigo: "AC001", categoria: "Accesorios", nombre: "Controlador Xbox Series X", precio: 59990, descripcion: "Control inalámbrico para Xbox y PC.", stock: 15, imagen: "img_productos/Controlador Xbox Series X.png" },
+  { codigo: "AC002", categoria: "Accesorios", nombre: "Auriculares HyperX Cloud II", precio: 79990, descripcion: "Audio envolvente y micrófono con cancelación de ruido.", stock: 12, imagen: "img_productos/Auriculares HyperX Cloud II2.png" },
+  { codigo: "CO001", categoria: "Consolas", nombre: "PlayStation 5", precio: 549990, descripcion: "Consola de última generación con SSD ultrarrápido.", stock: 5, imagen: "img_productos/PlayStation 5.webp" },
+  { codigo: "CG001", categoria: "Computadores Gamers", nombre: "PC Gamer ASUS ROG Strix", precio: 1299990, descripcion: "Potente PC con tarjeta gráfica NVIDIA RTX.", stock: 7, imagen: "img_productos/PC Gamer ASUS ROG Strix.png" },
+  { codigo: "SG001", categoria: "Sillas Gamers", nombre: "Silla Gamer Secretlab Titan", precio: 349990, descripcion: "Comodidad ergonómica premium para largas partidas.", stock: 9, imagen: "img_productos/Silla Gamer Secretlab Titan.webp" },
+  { codigo: "MS001", categoria: "Mouse", nombre: "Mouse Logitech G502 HERO", precio: 49990, descripcion: "Sensor HERO 25K para máxima precisión.", stock: 20, imagen: "img_productos/Mouse Logitech G502 HERO.png" },
+  { codigo: "MP001", categoria: "Mousepad", nombre: "Mousepad Razer Goliathus", precio: 29990, descripcion: "Superficie optimizada para velocidad y control.", stock: 30, imagen: "img_productos/Mousepad Razer Goliathus.png" },
+  { codigo: "PP001", categoria: "Poleras Personalizadas", nombre: "Polera Gamer 'Level-Up'", precio: 14990, descripcion: "Polera personalizada con diseño gamer exclusivo.", stock: 25, imagen: "img_productos/Polera Gamer 'Level-Up'.png" }
 ];
+
 
 // Elementos
 const listaProductos = document.getElementById("listaProductos");
@@ -25,16 +26,23 @@ function renderProductos(lista) {
   lista.forEach(prod => {
     const card = document.createElement("div");
     card.classList.add("producto");
-    card.setAttribute("data-categoria", prod.categoria);
     card.innerHTML = `
       <img src="${prod.imagen}" alt="${prod.nombre}">
       <h3>${prod.nombre}</h3>
       <p><strong>Categoría:</strong> ${prod.categoria}</p>
       <p class="precio">$${prod.precio.toLocaleString("es-CL")} CLP</p>
       <button class="btn-carrito" onclick="agregarCarrito('${prod.codigo}')">Agregar al carrito</button>
+      <button class="btn-detalle" onclick="verDetalle('${prod.codigo}')">Ver detalle</button>
     `;
     listaProductos.appendChild(card);
   });
+}
+
+
+
+// Redirigir al detalle
+function verDetalle(codigo) {
+  window.location.href = `detalle-producto.html?codigo=${codigo}`;
 }
 
 // Carrito
@@ -145,3 +153,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   filtrarProductos({ categoria: categoriaParam, texto: textoParam });
 });
+
+
+

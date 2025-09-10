@@ -140,3 +140,56 @@
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   }
 }
+
+/* Estilos para la página de detalle del producto */
+
+.detalle-producto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.producto-detalle-card {
+  display: flex;
+  gap: 30px;
+  background: #1a1a1a;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #8000ff55;
+}
+
+.producto-detalle-card img {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+.producto-detalle-card h2 {
+  color: #39ff14;
+  margin-bottom: 15px;
+}
+
+.producto-detalle-card .precio {
+  font-size: 1.5rem;
+  color: #ff00ff;
+  margin-bottom: 20px;
+}
+
+.btn-detalle {
+  margin-top: 10px;
+  background-color: #ff00ff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-detalle:hover {
+  background-color: #39ff14;
+  color: #111;
+}

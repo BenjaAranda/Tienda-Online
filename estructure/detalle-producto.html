@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Producto</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/productos.css">
+</head>
+
+<body>
+    <header class="encabezado">
+        <h1>Detalle del Producto</h1>
+    </header>
+
+    <main id="detalleProducto" class="detalle-producto">
+        <!-- Se llena con JS -->
+    </main>
+
+    <script src="../scripts/productos.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const params = new URLSearchParams(window.location.search);
+            const codigo = params.get("codigo");
+            const producto = productos.find(p => p.codigo === codigo);
+
+            const detalle = document.getElementById("detalleProducto");
+            if (producto) {
+                detalle.innerHTML = `
+          <div class="producto-detalle-card">
+            <img src="${producto.imagen}" alt="${producto.nombre}">
+            <div>
+              <h2>${producto.nombre}</h2>
+              <p><strong>Categoría:</strong> ${producto.categoria}</p>
+              <p>${producto.descripcion}</p>
+              <p><strong>Stock disponible:</strong> ${producto.stock}</p>
+              <p class="precio">$${producto.precio.toLocaleString("es-CL")} CLP</p>
+              <button class="btn-carrito" onclick="agregarCarrito('${producto.codigo}')">🛒 Agregar al carrito</button>
+            </div>
+          </div>
+        `;
+            } else {
+                detalle.innerHTML = `<p class="muted">Producto no encontrado.</p>`;
+            }
+        });
+    </script>
+</body>
+
+</html>
