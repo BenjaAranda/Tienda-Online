@@ -1,14 +1,14 @@
 const productos = [
-  { codigo: "JM001", categoria: "Juegos de Mesa", nombre: "Catan", precio: 29990 },
-  { codigo: "JM002", categoria: "Juegos de Mesa", nombre: "Carcassonne", precio: 24990 },
-  { codigo: "AC001", categoria: "Accesorios", nombre: "Controlador Xbox Series X", precio: 59990 },
-  { codigo: "AC002", categoria: "Accesorios", nombre: "Auriculares HyperX Cloud II", precio: 79990 },
-  { codigo: "CO001", categoria: "Consolas", nombre: "PlayStation 5", precio: 549990 },
-  { codigo: "CG001", categoria: "Computadores Gamers", nombre: "PC Gamer ASUS ROG Strix", precio: 1299990 },
-  { codigo: "SG001", categoria: "Sillas Gamers", nombre: "Silla Gamer Secretlab Titan", precio: 349990 },
-  { codigo: "MS001", categoria: "Mouse", nombre: "Mouse Logitech G502 HERO", precio: 49990 },
-  { codigo: "MP001", categoria: "Mousepad", nombre: "Mousepad Razer Goliathus", precio: 29990 },
-  { codigo: "PP001", categoria: "Poleras Personalizadas", nombre: "Polera Gamer 'Level-Up'", precio: 14990 },
+  { codigo: "JM001", categoria: "Juegos de Mesa", nombre: "Catan", precio: 29990, imagen: "img_productos/catan.png" },
+  { codigo: "JM002", categoria: "Juegos de Mesa", nombre: "Carcassonne", precio: 24990, imagen: "img_productos/Carcassonne.png" },
+  { codigo: "AC001", categoria: "Accesorios", nombre: "Controlador Xbox Series X", precio: 59990, imagen: "img_productos/Controlador Xbox Series X.png" },
+  { codigo: "AC002", categoria: "Accesorios", nombre: "Auriculares HyperX Cloud II", precio: 79990, imagen: "img_productos/Auriculares HyperX Cloud II2.png" },
+  { codigo: "CO001", categoria: "Consolas", nombre: "PlayStation 5", precio: 549990, imagen: "img_productos/PlayStation 5.webp" },
+  { codigo: "CG001", categoria: "Computadores Gamers", nombre: "PC Gamer ASUS ROG Strix", precio: 1299990, imagen: "img_productos/PC Gamer ASUS ROG Strix.png" },
+  { codigo: "SG001", categoria: "Sillas Gamers", nombre: "Silla Gamer Secretlab Titan", precio: 349990, imagen: "img_productos/Silla Gamer Secretlab Titan.webp" },
+  { codigo: "MS001", categoria: "Mouse", nombre: "Mouse Logitech G502 HERO", precio: 49990, imagen: "img_productos/Mouse Logitech G502 HERO.png" },
+  { codigo: "MP001", categoria: "Mousepad", nombre: "Mousepad Razer Goliathus", precio: 29990, imagen: "img_productos/Mousepad Razer Goliathus.png" },
+  { codigo: "PP001", categoria: "Poleras Personalizadas", nombre: "Polera Gamer 'Level-Up'", precio: 14990, imagen: "img_productos/Polera Gamer 'Level-Up'.png" },
 ];
 
 // Elementos
@@ -25,8 +25,9 @@ function renderProductos(lista) {
   lista.forEach(prod => {
     const card = document.createElement("div");
     card.classList.add("producto");
-    card.setAttribute("data-categoria", prod.categoria); // ✅ ahora cada producto tiene data-categoria
+    card.setAttribute("data-categoria", prod.categoria);
     card.innerHTML = `
+      <img src="${prod.imagen}" alt="${prod.nombre}">
       <h3>${prod.nombre}</h3>
       <p><strong>Categoría:</strong> ${prod.categoria}</p>
       <p class="precio">$${prod.precio.toLocaleString("es-CL")} CLP</p>
@@ -44,12 +45,10 @@ function agregarCarrito(codigo) {
     return;
   }
 
-  // Guardar en localStorage
   let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
   carrito.push(producto);
   localStorage.setItem("carrito", JSON.stringify(carrito));
 
-  // Ventana emergente
   const modal = document.createElement("div");
   modal.style.position = "fixed";
   modal.style.top = "0";
@@ -99,24 +98,20 @@ function agregarCarrito(codigo) {
 function filtrarProductos(filtros = {}) {
   let lista = [...productos];
 
-  // Filtro categoría
   const categoria = filtros.categoria || categoriaSelect.value;
   if (categoria && categoria !== "todas") {
     lista = lista.filter(p => p.categoria === categoria);
   }
 
-  // Filtro texto (buscador del header)
   const texto = filtros.texto || "";
   if (texto) {
     lista = lista.filter(p => p.nombre.toLowerCase().includes(texto.toLowerCase()));
   }
 
-  // Filtro precio
   const min = filtros.min || parseInt(precioMinInput.value) || 0;
   const max = filtros.max || parseInt(precioMaxInput.value) || Infinity;
   lista = lista.filter(p => p.precio >= min && p.precio <= max);
 
-  // Ordenar
   switch (ordenarSelect.value) {
     case "precioMayor":
       lista.sort((a, b) => b.precio - a.precio);
@@ -138,17 +133,15 @@ function filtrarProductos(filtros = {}) {
 // Eventos
 btnFiltrar.addEventListener("click", () => filtrarProductos());
 
-// ✅ Inicial: aplicar parámetros de búsqueda desde la URL
+// Inicial: aplicar parámetros de búsqueda desde la URL
 document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
   const categoriaParam = params.get("categoria") || "todas";
   const textoParam = params.get("q") || "";
 
-  // Seleccionar categoría en el filtro lateral
   if (categoriaSelect) {
     categoriaSelect.value = categoriaParam;
   }
 
-  // Ejecutar filtrado inicial
   filtrarProductos({ categoria: categoriaParam, texto: textoParam });
 });

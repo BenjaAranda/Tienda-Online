@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Level-Up Gamer</title>
   <link rel="stylesheet" href="../styles/main.css">
 </head>
+
 <body>
 
   <!-- Encabezado -->
@@ -16,27 +18,26 @@
         <img src="img_index/logo_main.png" alt="Logo Level-Up Gamer">
       </div>
 
-  <!-- Buscador -->
-  <form id="form-buscador" class="buscador">
-    <select id="categoria">
-      <option value="todas">Todas</option>
-      <option value="Juegos de Mesa">Juegos de Mesa</option>
-      <option value="Accesorios">Accesorios</option>
-      <option value="Consolas">Consolas</option>
-      <option value="Computadores Gamers">Computadores Gamers</option>
-      <option value="Sillas Gamers">Sillas Gamers</option>
-      <option value="Mouse">Mouse</option>
-      <option value="Mousepad">Mousepad</option>
-      <option value="Poleras Personalizadas">Poleras Personalizadas</option>
-      <option value="Polerones Gamers Personalizados">Polerones Gamers Personalizados</option>
-    </select>
-    <input type="text" id="busqueda" placeholder="Busca tus productos gamer favoritos...">
-    <button type="submit">🔍</button>
-  </form>
+      <!-- Buscador -->
+      <form id="form-buscador" class="buscador">
+        <select id="categoria">
+          <option value="todas">Todas</option>
+          <option value="Juegos de Mesa">Juegos de Mesa</option>
+          <option value="Accesorios">Accesorios</option>
+          <option value="Consolas">Consolas</option>
+          <option value="Computadores Gamers">Computadores Gamers</option>
+          <option value="Sillas Gamers">Sillas Gamers</option>
+          <option value="Mouse">Mouse</option>
+          <option value="Mousepad">Mousepad</option>
+          <option value="Poleras Personalizadas">Poleras Personalizadas</option>
+          <option value="Polerones Gamers Personalizados">Polerones Gamers Personalizados</option>
+        </select>
+        <input type="text" id="busqueda" placeholder="Busca tus productos gamer favoritos...">
+        <button type="submit">🔍</button>
+      </form>
 
       <!-- Iconos -->
       <div class="iconos">
-        <!-- Redirección directa -->
         <button class="btn-usuario" onclick="window.location.href='login.html'">👤</button>
         <button class="btn-carrito" onclick="window.location.href='carrito.html'">🛒</button>
       </div>
@@ -51,7 +52,6 @@
         <li><a href="contacto.html">Contacto</a></li>
         <li><a href="blog.html">Blog</a></li>
       </ul>
-      <!-- Botón Tiendas -->
       <button class="btn-tiendas">📍 Eventos</button>
     </nav>
   </header>
@@ -60,152 +60,135 @@
   <main>
     <!-- Banner -->
     <section class="banner">
-      <img src="img_index\banner.png" alt="Promoción Gamer">
+      <img src="img_index/banner.png" alt="Promoción Gamer">
       <div class="banner-text">
         <h2>Equipamiento Gamer</h2>
         <p>Consolas, PCs, Sillas y más 🚀</p>
-        <a href="#" class="btn">¡Explorar ahora!</a>
+        <a href="productos.html" class="btn">¡Explorar ahora!</a>
       </div>
     </section>
 
     <!-- Sección de categorías -->
     <section class="categorias">
       <div class="categoria">
-        <img src="img_index/CONSOLAS.png" alt="Consolas">
-        <h3>Consolas</h3>
-        <a href="#">Ver categoría →</a>
-      </div>
-      <div class="categoria">
-        <img src="img_index/PC1.png" alt="PC Gamers">
-        <h3>PC Gamers</h3>
-        <a href="#">Ver categoría →</a>
-      </div>
-      <div class="categoria">
-        <img src="img_index/Silla_gamer.png" alt="Sillas">
-        <h3>Sillas Gamers</h3>
-        <a href="#">Ver categoría →</a>
-      </div>
-      <div class="categoria">
-        <img src="img_index/mouseviper.png" alt="Mouse">
-        <h3>Mouse</h3>
-        <a href="#">Ver categoría →</a>
+        <img src="img_productos/catan.png" alt="Juegos de Mesa">
+        <h3>Juegos de Mesa</h3>
+        <a href="productos.html?categoria=Juegos de Mesa">Ver categoría →</a>
       </div>
       <div class="categoria">
         <img src="img_index/accesorios.png" alt="Accesorios">
         <h3>Accesorios</h3>
-        <a href="#">Ver categoría →</a>
+        <a href="productos.html?categoria=Accesorios">Ver categoría →</a>
       </div>
       <div class="categoria">
-        <img src="img_index/gengar.png" alt="Merch">
-        <h3>Merch Gamer</h3>
-        <a href="#">Ver categoría →</a>
+        <img src="img_index/CONSOLAS.png" alt="Consolas">
+        <h3>Consolas</h3>
+        <a href="productos.html?categoria=Consolas">Ver categoría →</a>
       </div>
+      <div class="categoria">
+        <img src="img_index/PC1.png" alt="Computadores Gamers">
+        <h3>Computadores Gamers</h3>
+        <a href="productos.html?categoria=Computadores Gamers">Ver categoría →</a>
+      </div>
+      <div class="categoria">
+        <img src="img_index/Silla_gamer.png" alt="Sillas Gamers">
+        <h3>Sillas Gamers</h3>
+        <a href="productos.html?categoria=Sillas Gamers">Ver categoría →</a>
+      </div>
+
+
     </section>
   </main>
 
-<section class="productos">
+  <!-- Productos destacados -->
+  <section class="productos">
     <h2 class="titulo-seccion">PRODUCTOS DESTACADOS</h2>
     <div class="grid-productos">
 
-        <div class="producto">
-            <img src="img/mouse1.png" alt="Producto 1">
-            <h3>Actualizar más tarde</h3>
-            <p class="precio">$10.000</p>
-            <button class="btn-carrito">🛒 Añadir al carrito</button>
-        </div>
+      <div class="producto">
+        <img src="img_productos/catan.png" alt="Catan">
+        <h3 class="nombre">Catan</h3>
+        <p><strong>Categoría:</strong> Juegos de Mesa</p>
+        <p class="precio">$29.990 CLP</p>
+        <button class="btn-carrito">Agregar al carrito</button>
+      </div>
 
-        <div class="producto">
-            <img src="img/mouse1.png" alt="Producto 2">
-            <h3>Actualizar más tarde</h3>
-            <p class="precio">$10.000</p>
-            <button class="btn-carrito">🛒 Añadir al carrito</button>
-        </div>
+      <div class="producto">
+        <img src="img_productos/Carcassonne.png" alt="Carcassonne">
+        <h3 class="nombre">Carcassonne</h3>
+        <p><strong>Categoría:</strong> Juegos de Mesa</p>
+        <p class="precio">$24.990 CLP</p>
+        <button class="btn-carrito">Agregar al carrito</button>
+      </div>
 
-        <div class="producto">
-            <img src="img/mouse1.png" alt="Producto 3">
-            <h3>Actualizar más tarde</h3>
-            <p class="precio">$10.000</p>
-            <button class="btn-carrito">🛒 Añadir al carrito</button>
-        </div>
+      <div class="producto">
+        <img src="img_productos/Controlador Xbox Series X.png" alt="Controlador Xbox Series X">
+        <h3 class="nombre">Controlador Xbox Series X</h3>
+        <p><strong>Categoría:</strong> Accesorios</p>
+        <p class="precio">$59.990 CLP</p>
+        <button class="btn-carrito">Agregar al carrito</button>
+      </div>
 
-        <div class="producto">
-            <img src="img/mouse1.png" alt="Producto 4">
-            <h3>Actualizar más tarde</h3>
-            <p class="precio">$10.000</p>
-            <button class="btn-carrito">🛒 Añadir al carrito</button>
-        </div>
+      <div class="producto">
+        <img src="img_productos/Auriculares HyperX Cloud II2.png" alt="Auriculares HyperX Cloud II">
+        <h3 class="nombre">Auriculares HyperX Cloud II</h3>
+        <p><strong>Categoría:</strong> Accesorios</p>
+        <p class="precio">$79.990 CLP</p>
+        <button class="btn-carrito">Agregar al carrito</button>
+      </div>
 
-        <div class="producto">
-            <img src="img/mouse1.png" alt="Producto 5">
-            <h3>Actualizar más tarde</h3>
-            <p class="precio">$10.000</p>
-            <button class="btn-carrito">🛒 Añadir al carrito</button>
-        </div>
+      <div class="producto">
+        <img src="img_productos/PlayStation 5.webp" alt="PlayStation 5">
+        <h3 class="nombre">PlayStation 5</h3>
+        <p><strong>Categoría:</strong> Consolas</p>
+        <p class="precio">$549.990 CLP</p>
+        <button class="btn-carrito">Agregar al carrito</button>
+      </div>
 
-        <div class="producto">
-            <img src="img/mouse1.png" alt="Producto 6">
-            <h3>Actualizar más tarde</h3>
-            <p class="precio">$10.000</p>
-            <button class="btn-carrito">🛒 Añadir al carrito</button>
-        </div>
+      <div class="producto">
+        <img src="img_productos/PC Gamer ASUS ROG Strix.png" alt="PC Gamer ASUS ROG Strix">
+        <h3 class="nombre">PC Gamer ASUS ROG Strix</h3>
+        <p><strong>Categoría:</strong> Computadores Gamers</p>
+        <p class="precio">$1.299.990 CLP</p>
+        <button class="btn-carrito">Agregar al carrito</button>
+      </div>
 
-        <div class="producto">
-            <img src="img/mouse1.png" alt="Producto 7">
-            <h3>Actualizar más tarde</h3>
-            <p class="precio">$10.000</p>
-            <button class="btn-carrito">🛒 Añadir al carrito</button>
-        </div>
+      <div class="producto">
+        <img src="img_productos/Silla Gamer Secretlab Titan.webp" alt="Silla Gamer Secretlab Titan">
+        <h3 class="nombre">Silla Gamer Secretlab Titan</h3>
+        <p><strong>Categoría:</strong> Sillas Gamers</p>
+        <p class="precio">$349.990 CLP</p>
+        <button class="btn-carrito">Agregar al carrito</button>
+      </div>
 
-        <div class="producto">
-            <img src="img/mouse1.png" alt="Producto 8">
-            <h3>Actualizar más tarde</h3>
-            <p class="precio">$10.000</p>
-            <button class="btn-carrito">🛒 Añadir al carrito</button>
-        </div>
+      <div class="producto">
+        <img src="img_productos/Mouse Logitech G502 HERO.png" alt="Mouse Logitech G502 HERO">
+        <h3 class="nombre">Mouse Logitech G502 HERO</h3>
+        <p><strong>Categoría:</strong> Mouse</p>
+        <p class="precio">$49.990 CLP</p>
+        <button class="btn-carrito">Agregar al carrito</button>
+      </div>
 
-        <div class="producto">
-            <img src="img/mouse1.png" alt="Producto 9">
-            <h3>Actualizar más tarde</h3>
-            <p class="precio">$10.000</p>
-            <button class="btn-carrito">🛒 Añadir al carrito</button>
-        </div>
+      <div class="producto">
+        <img src="img_productos/Mousepad Razer Goliathus.png" alt="Mousepad Razer Goliathus">
+        <h3 class="nombre">Mousepad Razer Goliathus</h3>
+        <p><strong>Categoría:</strong> Mousepad</p>
+        <p class="precio">$29.990 CLP</p>
+        <button class="btn-carrito">Agregar al carrito</button>
+      </div>
 
-        <div class="producto">
-            <img src="img/mouse1.png" alt="Producto 10">
-            <h3>Actualizar más tarde</h3>
-            <p class="precio">$10.000</p>
-            <button class="btn-carrito">🛒 Añadir al carrito</button>
-        </div>
+      <div class="producto">
+        <img src="img_productos/Polera Gamer 'Level-Up'.png" alt="Polera Gamer 'Level-Up'">
+        <h3 class="nombre">Polera Gamer 'Level-Up'</h3>
+        <p><strong>Categoría:</strong> Poleras Personalizadas</p>
+        <p class="precio">$14.990 CLP</p>
+        <button class="btn-carrito">Agregar al carrito</button>
+      </div>
 
-        <div class="producto">
-            <img src="img/mouse1.png" alt="Producto 11">
-            <h3>Actualizar más tarde</h3>
-            <p class="precio">$10.000</p>
-            <button class="btn-carrito">🛒 Añadir al carrito</button>
-        </div>
-
-        <div class="producto">
-            <img src="img/mouse1.png" alt="Producto 12">
-            <h3>Actualizar más tarde</h3>
-            <p class="precio">$10.000</p>
-            <button class="btn-carrito">🛒 Añadir al carrito</button>
-        </div>
-
-        <div class="producto">
-            <img src="img/mouse1.png" alt="Producto 13">
-            <h3>Actualizar más tarde</h3>
-            <p class="precio">$10.000</p>
-            <button class="btn-carrito">🛒 Añadir al carrito</button>
-        </div>
-
-        <div class="producto">
-            <img src="img/mouse1.png" alt="Producto 14">
-            <h3>Actualizar más tarde</h3>
-            <p class="precio">$10.000</p>
-            <button class="btn-carrito">🛒 Añadir al carrito</button>
-        </div>
     </div>
-</section>
+  </section>
+
+
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-contenido">
@@ -213,22 +196,22 @@
         <img src="img_index/logo_main.png" alt="Level-Up Gamer">
         <p>Tu tienda gamer en Chile desde 2022 🎮</p>
       </div>
-      
+
       <div class="footer-links">
         <h4>Enlaces</h4>
         <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="productos.html">Productos</a></li>
-        <li><a href="nosotros.html">Nosotros</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-        <li><a href="blog.html">Blog</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="blog.html">Blog</a></li>
         </ul>
       </div>
-      
+
       <div class="footer-social">
         <h4>Síguenos</h4>
-        <a href="#">Facebook</a> | 
-        <a href="#">Instagram</a> | 
+        <a href="#">Facebook</a> |
+        <a href="#">Instagram</a> |
         <a href="#">Twitter</a>
       </div>
       <div class="footer-newsletter">
@@ -237,11 +220,11 @@
         <button>Enviar</button>
       </div>
     </div>
-
     <p class="footer-copy">© 2025 Level-Up Gamer. Todos los derechos reservados.</p>
   </footer>
+
   <script src="../scripts/productos.js"></script>
   <script src="../scripts/buscador.js"></script>
-
 </body>
+
 </html>
