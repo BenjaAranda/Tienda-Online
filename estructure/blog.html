@@ -5,17 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Level-Up Gamer | Blog</title>
   <link rel="stylesheet" href="../styles/blog.css">
+  <link rel="stylesheet" href="../styles/main.css">
 </head>
 <body>
 
 <!-- Encabezado -->
-<header class="encabezado">
-  <div class="barra-superior">
-    <!-- Logo -->
-    <div class="logo">
-      <a href="index.html">
-        <img src="img_index/logo_main.png" alt="Logo">
-      </a>
+  <header class="encabezado">
+    <div class="barra-superior">
+      <!-- Logo -->
+      <div class="logo">
+        <img src="img_index/logo_main.png" alt="Logo Level-Up Gamer">
+      </div>
+
+<!-- Buscador -->
+<form id="form-buscador" class="buscador">
+  <select id="categoria">
+    <option value="todas">Todas</option>
+    <option value="Juegos de Mesa">Juegos de Mesa</option>
+    <option value="Accesorios">Accesorios</option>
+    <option value="Consolas">Consolas</option>
+    <option value="Computadores Gamers">Computadores Gamers</option>
+    <option value="Sillas Gamers">Sillas Gamers</option>
+    <option value="Mouse">Mouse</option>
+    <option value="Mousepad">Mousepad</option>
+    <option value="Poleras Personalizadas">Poleras Personalizadas</option>
+    <option value="Polerones Gamers Personalizados">Polerones Gamers Personalizados</option>
+  </select>
+  <input type="text" id="busqueda" placeholder="Busca tus productos gamer favoritos...">
+  <button type="submit">🔍</button>
+</form>
+
+
+      <!-- Iconos -->
+      <div class="iconos">
+        <!-- Redirección directa -->
+        <button class="btn-usuario" onclick="window.location.href='login.html'">👤</button>
+        <button class="btn-carrito" onclick="window.location.href='carrito.html'">🛒</button>
+      </div>
     </div>
 
     <!-- Navegación -->
@@ -27,15 +53,10 @@
         <li><a href="contacto.html">Contacto</a></li>
         <li><a href="blog.html">Blog</a></li>
       </ul>
+      <!-- Botón Tiendas -->
+      <button class="btn-tiendas">📍 Eventos</button>
     </nav>
-
-    <!-- Iconos -->
-    <div class="iconos">
-      <button class="btn-usuario" onclick="window.location.href='login.html'">👤</button>
-      <button class="btn-carrito">🛒</button>
-    </div>
-  </div>
-</header>
+  </header>
 
 
 
@@ -103,8 +124,40 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <p>© 2025 Level-Up Gamer | Todos los derechos reservados</p>
+    <div class="footer-contenido">
+      <div class="footer-logo">
+        <img src="img_index/logo_main.png" alt="Level-Up Gamer">
+        <p>Tu tienda gamer en Chile desde 2022 🎮</p>
+      </div>
+      
+      <div class="footer-links">
+        <h4>Enlaces</h4>
+        <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-social">
+        <h4>Síguenos</h4>
+        <a href="#">Facebook</a> | 
+        <a href="#">Instagram</a> | 
+        <a href="#">Twitter</a>
+      </div>
+      <div class="footer-newsletter">
+        <h4>Suscríbete</h4>
+        <input type="email" placeholder="Tu correo">
+        <button>Enviar</button>
+      </div>
+    </div>
+
+    <p class="footer-copy">© 2025 Level-Up Gamer. Todos los derechos reservados.</p>
   </footer>
+  <script src="../scripts/buscador.js"></script>
+
 
 </body>
 </html>

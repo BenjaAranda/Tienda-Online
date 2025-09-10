@@ -14,7 +14,7 @@ const productos = [
 // Elementos
 const listaProductos = document.getElementById("listaProductos");
 const ordenarSelect = document.getElementById("ordenar");
-const categoriaSelect = document.getElementById("categoria");
+const categoriaSelect = document.querySelector(".filtros select#categoria");
 const precioMinInput = document.getElementById("precioMin");
 const precioMaxInput = document.getElementById("precioMax");
 const btnFiltrar = document.getElementById("btnFiltrar");
@@ -25,6 +25,7 @@ function renderProductos(lista) {
   lista.forEach(prod => {
     const card = document.createElement("div");
     card.classList.add("producto");
+    card.setAttribute("data-categoria", prod.categoria); // ✅ ahora cada producto tiene data-categoria
     card.innerHTML = `
       <h3>${prod.nombre}</h3>
       <p><strong>Categoría:</strong> ${prod.categoria}</p>
@@ -34,6 +35,8 @@ function renderProductos(lista) {
     listaProductos.appendChild(card);
   });
 }
+
+// Carrito
 function agregarCarrito(codigo) {
   const producto = productos.find(p => p.codigo === codigo);
   if (!producto) {
@@ -46,7 +49,7 @@ function agregarCarrito(codigo) {
   carrito.push(producto);
   localStorage.setItem("carrito", JSON.stringify(carrito));
 
-  // Crear ventana emergente (neón)
+  // Ventana emergente
   const modal = document.createElement("div");
   modal.style.position = "fixed";
   modal.style.top = "0";
@@ -92,20 +95,25 @@ function agregarCarrito(codigo) {
   document.body.appendChild(modal);
 }
 
-
 // Filtrar productos
-function filtrarProductos() {
+function filtrarProductos(filtros = {}) {
   let lista = [...productos];
 
   // Filtro categoría
-  const categoria = categoriaSelect.value;
-  if (categoria !== "todas") {
+  const categoria = filtros.categoria || categoriaSelect.value;
+  if (categoria && categoria !== "todas") {
     lista = lista.filter(p => p.categoria === categoria);
   }
 
+  // Filtro texto (buscador del header)
+  const texto = filtros.texto || "";
+  if (texto) {
+    lista = lista.filter(p => p.nombre.toLowerCase().includes(texto.toLowerCase()));
+  }
+
   // Filtro precio
-  const min = parseInt(precioMinInput.value) || 0;
-  const max = parseInt(precioMaxInput.value) || Infinity;
+  const min = filtros.min || parseInt(precioMinInput.value) || 0;
+  const max = filtros.max || parseInt(precioMaxInput.value) || Infinity;
   lista = lista.filter(p => p.precio >= min && p.precio <= max);
 
   // Ordenar
@@ -128,7 +136,19 @@ function filtrarProductos() {
 }
 
 // Eventos
-btnFiltrar.addEventListener("click", filtrarProductos);
+btnFiltrar.addEventListener("click", () => filtrarProductos());
 
-// Inicial
-renderProductos(productos);
+// ✅ Inicial: aplicar parámetros de búsqueda desde la URL
+document.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const categoriaParam = params.get("categoria") || "todas";
+  const textoParam = params.get("q") || "";
+
+  // Seleccionar categoría en el filtro lateral
+  if (categoriaSelect) {
+    categoriaSelect.value = categoriaParam;
+  }
+
+  // Ejecutar filtrado inicial
+  filtrarProductos({ categoria: categoriaParam, texto: textoParam });
+});

@@ -17,15 +17,23 @@
                 <img src="img_index/logo_main.png" alt="Logo Level-Up Gamer">
             </div>
 
-            <!-- Buscador -->
-            <div class="buscador">
-                <select>
-                    <option value="todos">Todos</option>
-                    <option value="juegos">Juegos</option>
-                    <option value="hardware">Hardware</option>
-                </select>
-                <input type="text" placeholder="Buscar productos gamer...">
-            </div>
+    <!-- Buscador -->
+    <form id="form-buscador" class="buscador">
+    <select id="categoria">
+        <option value="todas">Todas</option>
+        <option value="Juegos de Mesa">Juegos de Mesa</option>
+        <option value="Accesorios">Accesorios</option>
+        <option value="Consolas">Consolas</option>
+        <option value="Computadores Gamers">Computadores Gamers</option>
+        <option value="Sillas Gamers">Sillas Gamers</option>
+        <option value="Mouse">Mouse</option>
+        <option value="Mousepad">Mousepad</option>
+        <option value="Poleras Personalizadas">Poleras Personalizadas</option>
+        <option value="Polerones Gamers Personalizados">Polerones Gamers Personalizados</option>
+    </select>
+    <input type="text" id="busqueda" placeholder="Busca tus productos gamer favoritos...">
+    <button type="submit">🔍</button>
+    </form>
 
             <!-- Iconos -->
             <div class="iconos">
@@ -70,6 +78,8 @@
     <!-- Script del carrito -->
     <script src="../scripts/productos.js"></script>
     <script src="../scripts/carrito.js"></script>
+    <script src="../scripts/buscador.js"></script>
+
 
 </body>
 </html>
