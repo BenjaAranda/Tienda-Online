@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin | Usuarios - Level-Up Gamer</title>
+  <link rel="stylesheet" href="styles/admin.css">
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="sidebar">
+      <div class="brand">Level-Up <span>Admin</span></div>
+      <nav>
+        <a href="admin-dashboard.html">Dashboard</a>
+        <a href="admin-products.html">Productos</a>
+        <a href="admin-users.html" class="active">Usuarios</a>
+        <a id="logoutBtn" href="../../estructure/index.html">Cerrar sesión</a>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <header class="content-header">
+        <h2>Gestión de Usuarios</h2>
+        <button id="btnNuevoUsuario" class="btn primary">Nuevo Usuario</button>
+      </header>
+
+      <section>
+        <div class="table-wrap">
+          <table id="usersTable">
+            <thead><tr><th>RUN</th><th>Nombre</th><th>Correo</th><th>Rol</th><th>Región / Comuna</th><th>Acciones</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <div id="usersPager" class="pager"></div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Modal nuevo usuario -->
+  <div id="modalUser" class="modal" aria-hidden="true">
+    <div class="modal-inner">
+      <h3 id="userModalTitle">Nuevo Usuario</h3>
+      <form id="formUser">
+        <label>RUN (sin puntos ni guion, 7-9 dígitos)</label>
+        <input id="u_run" required minlength="7" maxlength="9" pattern="^[0-9Kk]+$">
+
+        <label>Nombre (max 50)</label>
+        <input id="u_nombre" required maxlength="50">
+
+        <label>Apellidos (max 100)</label>
+        <input id="u_apellidos" required maxlength="100">
+
+        <label>Correo</label>
+        <input id="u_correo" type="email" required maxlength="100">
+        <small>Solo: @duoc.cl @profesor.duoc.cl @gmail.com</small>
+
+        <label>Fecha Nacimiento (opcional)</label>
+        <input id="u_fnac" type="date">
+
+        <label>Rol</label>
+        <select id="u_rol">
+          <option>Administrador</option>
+          <option>Cliente</option>
+          <option>Vendedor</option>
+        </select>
+
+        <label>Región</label>
+        <select id="u_region"></select>
+
+        <label>Comuna</label>
+        <select id="u_comuna"></select>
+
+        <label>Dirección</label>
+        <input id="u_direccion" required maxlength="300">
+
+        <div class="modal-actions">
+          <button type="button" id="closeUserModal" class="btn">Cancelar</button>
+          <button type="submit" class="btn primary">Guardar usuario</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="scripts/auth.js"></script>
+  <script src="scripts/admin-users.js"></script>
+</body>
+</html>

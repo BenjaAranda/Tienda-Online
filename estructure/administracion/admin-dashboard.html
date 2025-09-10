@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Admin | Dashboard - Level-Up Gamer</title>
-  <link rel="stylesheet" href="../styles/admin.css">
+  <link rel="stylesheet" href="styles/admin.css">
 </head>
 <body>
   <div class="admin-layout">
@@ -14,7 +14,7 @@
         <a href="admin-dashboard.html" class="active">Dashboard</a>
         <a href="admin-products.html">Productos</a>
         <a href="admin-users.html">Usuarios</a>
-        <a id="logoutBtn" href="#">Cerrar sesión</a>
+        <a id="logoutBtn" href="../../estructure/index.html">Cerrar sesión</a>
       </nav>
     </aside>
 
@@ -46,24 +46,35 @@
     </main>
   </div>
 
-  <script src="../scripts/auth.js"></script>
+  <script src="scripts/auth.js"></script>
   <script>
-    authProtect(); // proteger la página
+    authProtect(); // protege la ruta
 
-    // resumen rápido
-    function loadResumen(){
-      const productos = JSON.parse(localStorage.getItem('productos')||'[]');
-      const usuarios = JSON.parse(localStorage.getItem('usuarios')||'[]');
+    // Resumen dashboard
+    function loadResumen() {
+      const productos = JSON.parse(localStorage.getItem('productos') || '[]');
+      const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
+
       document.getElementById('totalProducts').textContent = productos.length;
       document.getElementById('totalUsers').textContent = usuarios.length;
-      const low = productos.filter(p => p.stockCritico!=null && p.stockCritico!=='' && p.stockCritico >=0 && p.stock <= Number(p.stockCritico)).length;
-      document.getElementById('lowStockCount').textContent = low;
 
+      // Productos con stock crítico
+      const lowStock = productos.filter(p => p.stockCritico != null && p.stock != null && p.stock <= p.stockCritico).length;
+      document.getElementById('lowStockCount').textContent = lowStock;
+
+      // Últimos productos añadidos
       const recent = productos.slice(-6).reverse();
       const recentList = document.getElementById('recentList');
-      recentList.innerHTML = recent.length? recent.map(r=>`<div class="recent-item"><strong>${r.nombre}</strong><span>${r.categoria}</span></div>`).join(''): '<p class="muted">No hay productos aún</p>';
+      recentList.innerHTML = recent.length
+        ? recent.map(r => `<div class="recent-item"><strong>${r.nombre}</strong> <span>${r.categoria}</span></div>`).join('')
+        : '<p class="muted">No hay productos aún</p>';
     }
-    document.getElementById('logoutBtn').addEventListener('click', (e)=>{ e.preventDefault(); logout(); });
+
+    document.getElementById('logoutBtn').addEventListener('click', e => { 
+      e.preventDefault(); 
+      logout(); 
+    });
+
     loadResumen();
   </script>
 </body>
