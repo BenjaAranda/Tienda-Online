@@ -28,17 +28,17 @@
             const detalle = document.getElementById("detalleProducto");
             if (producto) {
                 detalle.innerHTML = `
-          <div class="producto-detalle-card">
+            <div class="producto-detalle-card">
             <img src="${producto.imagen}" alt="${producto.nombre}">
             <div>
-              <h2>${producto.nombre}</h2>
-              <p><strong>Categoría:</strong> ${producto.categoria}</p>
-              <p>${producto.descripcion}</p>
-              <p><strong>Stock disponible:</strong> ${producto.stock}</p>
-              <p class="precio">$${producto.precio.toLocaleString("es-CL")} CLP</p>
-              <button class="btn-carrito" onclick="agregarCarrito('${producto.codigo}')">🛒 Agregar al carrito</button>
+            <h2>${producto.nombre}</h2>
+            <p><strong>Categoría:</strong> ${producto.categoria}</p>
+            <p>${producto.descripcion}</p>
+            <p><strong>Stock disponible:</strong> ${producto.stock}</p>
+            <p class="precio">$${producto.precio.toLocaleString("es-CL")} CLP</p>
+            <button class="btn-carrito" onclick="agregarCarrito('${producto.codigo}')">🛒 Agregar al carrito</button>
             </div>
-          </div>
+            </div>
         `;
             } else {
                 detalle.innerHTML = `<p class="muted">Producto no encontrado.</p>`;

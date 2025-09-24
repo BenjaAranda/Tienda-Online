@@ -56,12 +56,16 @@
     <!-- 1. Resumen General -->
     <section class="card">
     <h2>Resumen de Puntos</h2>
-    <p><strong>Nivel actual:</strong> Fanático 🏆</p>
+
+    <p><strong>Nivel actual:</strong> <span id="nivel-actual"></span></p>
+
+    <!-- Barra de progreso -->
     <div class="progress-bar">
-        <div class="progress" style="width: 70%;"></div>
+    <div class="progress" id="barra-progreso"></div>
     </div>
-    <p><strong>Puntos acumulados este año:</strong> 980</p>
-    <p><strong>Puntos disponibles:</strong> 450</p>
+
+    <p><strong>Puntos acumulados este año:</strong> <span id="puntos-acumulados">980</span></p>
+    <p><strong>Puntos disponibles:</strong> <span id="puntos-disponibles">450</span></p>
     <p class="warning"><strong>Puntos por caducar:</strong> 30 (en 20 días)</p>
     </section>
 
@@ -95,31 +99,35 @@
         </thead>
         <tbody>
         <tr>
-            <td>20-09-2025</td>
-            <td>Compra - Libro "El Conjuro"</td>
-            <td class="positivo">+50</td>
-            <td>20-09-2026</td>
-        </tr>
-        <tr>
-            <td>15-09-2025</td>
-            <td>Canje - Cupón envío gratis</td>
-            <td class="negativo">-100</td>
-            <td>-</td>
+        
         </tr>
         </tbody>
     </table>
     </section>
 
     <!-- 4. Beneficios -->
-    <section class="card">
-    <h2>Beneficios por Nivel</h2>
-    <ul>
-        <li>🎉 Descuentos exclusivos</li>
-        <li>🎂 Cupón de cumpleaños</li>
-        <li>🚚 Envío gratis en compras seleccionadas</li>
-        <li><strong>Requisito para siguiente nivel:</strong> 1500 pts en 12 meses</li>
-    </ul>
-    </section>
+    <section class="beneficios-container">
+  <!-- Bloque central que cambia -->
+  <div class="beneficios-slider" id="beneficios-slider">
+    <div class="beneficio activo">
+      <h3>💸 Sistema de Descuentos</h3>
+      <p>Aprovecha precios exclusivos al canjear tus puntos.</p>
+    </div>
+    <div class="beneficio">
+      <h3>🎂 Cupón de Cumpleaños</h3>
+      <p>Recibe un cupón especial con descuentos por tu cumpleaños.</p>
+    </div>
+    <div class="beneficio">
+      <h3>🚚 Envío Gratis</h3>
+      <p>Obtén envío gratis en compras seleccionadas usando tus puntos.</p>
+    </div>
+  </div>
+</section>
+ <!-- Texto fijo a la derecha -->
+  <div class="beneficios-texto">
+    <h2>Recibe todos estos beneficios<br> con nuestro programa de puntos</h2>
+  </div>
+
 
     <!-- 5. Tienda de Recompensas -->
     <section class="card">
@@ -134,6 +142,12 @@
         <p>Envío gratis</p>
         <p class="puntos">150 pts</p>
         <button>Canjear</button>
+        </div>
+        <div class="reward">
+        <p>Terremot</p>
+        <p class="puntos">150 pts</p>
+        <button>Canjear</button>
+
         </div>
     </div>
     </section>
