@@ -1,5 +1,25 @@
 // Simulación de usuarios guardados en localStorage
 const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+//dejar usuario ya guardado para pruebas
+if (!usuarios.some(u => u.email === "benjaprogramador@gmail.com")) {
+  usuarios.push({
+    nombre: "Benja",
+    edad: 20,
+    email: "benjaprogramador@gmail.com",
+    password: "Contraseña123"
+  });
+  localStorage.setItem("usuarios", JSON.stringify(usuarios));
+}
+//agregar usuario duoc para pruebas nombre estudianteDuoc, edad 20, email estudianteDuoc@duocuc.cl, password Contraseña123
+if (!usuarios.some(u => u.email === "estudianteDuoc@duocuc.cl")) {
+  usuarios.push({
+    nombre: "Estudiante DUOC",
+    edad: 20,
+    email: "estudianteDuoc@duocuc.cl",
+    password: "Contraseña123"
+  });
+  localStorage.setItem("usuarios", JSON.stringify(usuarios));
+}
 
 // --- Registro ---
 document.getElementById("registerForm").addEventListener("submit", function (e) {
@@ -70,4 +90,5 @@ document.getElementById("contactoForm").addEventListener("submit", function(e) {
     mensaje.style.display = "none";
   }, 4000);
 });
+
 
