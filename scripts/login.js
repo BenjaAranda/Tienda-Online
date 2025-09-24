@@ -66,7 +66,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
   if (usuario) {
     alert(`Bienvenido ${usuario.nombre}`);
     localStorage.setItem("usuarioActivo", JSON.stringify(usuario));
-    window.location.href = "index.html"; // redirige al home de la tienda
+    window.location.href = "perfil.html";
   } else {
     alert("Correo o contraseña incorrectos.");
   }
@@ -90,5 +90,6 @@ document.getElementById("contactoForm").addEventListener("submit", function(e) {
     mensaje.style.display = "none";
   }, 4000);
 });
+
 
 

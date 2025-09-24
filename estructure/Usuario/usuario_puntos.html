@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfil de Usuario - GamerShop</title>
+    <link rel="stylesheet" href="../../styles/usuario.css" />
+</head>
+<body>
+    <div class="dashboard">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <nav>
+            <div class="nav-block">
+                <h3>Mis pedidos</h3>
+                <ul>
+                    <li>
+                        🛒 <a href="#">Seguimiento de Pedidos</a>
+                    </li>
+                </ul>
+
+            </div>
+            <!-- Bloque Perfil -->
+            <div class="nav-block">
+                <h3>Perfil</h3>
+                <ul>
+                    <li data-url="../Usuario/usuario.html">📋 Datos Personales</li>
+                    <li>✏️ Editar Perfil</li>
+                </ul>
+            </div>
+
+            <!-- Bloque Cuenta -->
+            <div class="nav-block">
+                <h3>Cuenta</h3>
+                <ul>
+                    <li>⚙️ Gestión de Cuenta</li>
+                    <li>💳 Cambiar Tarjeta</li>
+                    <li class="danger">🗑️ Eliminar Cuenta</li>
+                </ul>
+            </div>
+            <!-- Bloque Digital -->
+            <div class="nav-block">
+                <h3>Digital</h3>
+                <ul>
+                    <li>📚 Productos Digitales</li>
+                    <li class="active">🌐 Puntos</li>
+                </ul>
+            </div>
+        </nav>
+    </aside>
+
+
+    <!-- Contenido principal -->
+    <main class="main-content">
+        <div class="main-content">
+    <!-- 1. Resumen General -->
+    <section class="card">
+    <h2>Resumen de Puntos</h2>
+    <p><strong>Nivel actual:</strong> Fanático 🏆</p>
+    <div class="progress-bar">
+        <div class="progress" style="width: 70%;"></div>
+    </div>
+    <p><strong>Puntos acumulados este año:</strong> 980</p>
+    <p><strong>Puntos disponibles:</strong> 450</p>
+    <p class="warning"><strong>Puntos por caducar:</strong> 30 (en 20 días)</p>
+    </section>
+
+    <!-- 2. Reglas de acumulación -->
+    <section class="card">
+    <h2>Reglas de Acumulación</h2>
+    <ul>
+        <li>1 punto por cada $1.000 gastado</li>
+        <li>Los puntos se acreditan al despachar el producto</li>
+    </ul>
+    </section>
+
+    <!-- 3. Historial -->
+    <section class="card">
+    <h2>Historial de Puntos</h2>
+    <div class="filters">
+        <button>Todos</button>
+        <button>Ganados</button>
+        <button>Usados</button>
+        <button>Anulados</button>
+        <button>Expirados</button>
+    </div>
+    <table>
+        <thead>
+        <tr>
+            <th>Fecha</th>
+            <th>Evento</th>
+            <th>Puntos</th>
+            <th>Expira</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>20-09-2025</td>
+            <td>Compra - Libro "El Conjuro"</td>
+            <td class="positivo">+50</td>
+            <td>20-09-2026</td>
+        </tr>
+        <tr>
+            <td>15-09-2025</td>
+            <td>Canje - Cupón envío gratis</td>
+            <td class="negativo">-100</td>
+            <td>-</td>
+        </tr>
+        </tbody>
+    </table>
+    </section>
+
+    <!-- 4. Beneficios -->
+    <section class="card">
+    <h2>Beneficios por Nivel</h2>
+    <ul>
+        <li>🎉 Descuentos exclusivos</li>
+        <li>🎂 Cupón de cumpleaños</li>
+        <li>🚚 Envío gratis en compras seleccionadas</li>
+        <li><strong>Requisito para siguiente nivel:</strong> 1500 pts en 12 meses</li>
+    </ul>
+    </section>
+
+    <!-- 5. Tienda de Recompensas -->
+    <section class="card">
+    <h2>Tienda de Recompensas</h2>
+    <div class="rewards-grid">
+        <div class="reward">
+        <p>Cupón $5.000</p>
+        <p class="puntos">200 pts</p>
+        <button>Canjear</button>
+        </div>
+        <div class="reward">
+        <p>Envío gratis</p>
+        <p class="puntos">150 pts</p>
+        <button>Canjear</button>
+        </div>
+    </div>
+    </section>
+</div>
+
+    </form>
+</section>
+
+    </main>
+    </div>
+
+    <script src="../../scripts/usuario.js" defer></script>
+</body>
+</html>

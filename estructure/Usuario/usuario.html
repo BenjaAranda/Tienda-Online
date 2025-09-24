@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfil de Usuario - GamerShop</title>
+    <link rel="stylesheet" href="../../styles/usuario.css" />
+</head>
+<body>
+    <div class="dashboard">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <nav>
+            <div class="nav-block">
+                <h3>Mis pedidos</h3>
+                <ul>
+                    <li>
+                        🛒 <a href="#">Seguimiento de Pedidos</a>
+                    </li>
+                </ul>
+
+            </div>
+            <!-- Bloque Perfil -->
+            <div class="nav-block">
+                <h3>Perfil</h3>
+                <ul>
+                    <li class="active">📋 Datos Personales</li>
+                    <li>✏️ Editar Perfil</li>
+                </ul>
+            </div>
+
+            <!-- Bloque Cuenta -->
+            <div class="nav-block">
+                <h3>Cuenta</h3>
+                <ul>
+                    <li>⚙️ Gestión de Cuenta</li>
+                    <li>💳 Cambiar Tarjeta</li>
+                    <li class="danger">🗑️ Eliminar Cuenta</li>
+                </ul>
+            </div>
+            <!-- Bloque Digital -->
+            <div class="nav-block">
+                <h3>Digital</h3>
+                <ul>
+                    <li>📚 Productos Digitales</li>
+                    <li data-url="../Usuario/usuario_puntos.html">🌐 Puntos</li>
+                </ul>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- Contenido principal -->
+    <main class="main-content">
+        <section id="datos-personales" class="module">
+        <h1>Datos Personales</h1>
+        <form id="form-datos">
+        <label>Nombre completo</label>
+        <input type="text" id="nombre" value="Usuario Gamer" />
+
+        <label>Email</label>
+        <input type="email" id="email" value="usuario@email.com" />
+
+        <label>Fecha de nacimiento</label>
+        <input type="date" id="fnac" value="2000-01-01" />
+
+        <button type="submit">Guardar cambios</button>
+    </form>
+</section>
+
+    </main>
+    </div>
+
+    <script src="../../scripts/usuario.js" defer></script>
+</body>
+</html>
